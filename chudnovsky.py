@@ -1,4 +1,5 @@
 import decimal
+decimal.getcontext().prec = 1000
 
 # source: https://en.wikipedia.org/wiki/Chudnovsky_algorithm
 # this is best case while using recursion, recursion used for calcuating to the Nth decimal.
@@ -23,5 +24,5 @@ def chudnovsky(n):
     return (426880 * decimal.Decimal(10005).sqrt() * Q1n) / (13591409*Q1n + R1n)
 
 
-for n in range(2,2000):
+for n in range(2,10):
     print(f"{n=} {chudnovsky(n)}")  # 3.14159265358979323846264338...
